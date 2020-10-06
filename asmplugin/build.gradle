@@ -1,0 +1,38 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+
+    // 添加 asm
+    implementation 'org.ow2.asm:asm:7.2'
+    implementation 'org.ow2.asm:asm-commons:7.2'
+    implementation 'org.ow2.asm:asm-analysis:7.2'
+    implementation 'org.ow2.asm:asm-util:7.1'
+    implementation 'org.ow2.asm:asm-tree:7.2'
+
+    compileOnly 'com.android.tools.build:gradle:3.4.1', {
+        exclude group:'org.ow2.asm'
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+uploadArchives{
+    repositories.mavenDeployer{
+        // 本地仓库路径
+        repository(url: uri('../repo'))
+
+        // groupId
+        pom.groupId = 'com.yxhuang'
+
+        // artifactId
+        pom.artifactId = 'autotrack.android'
+
+        // 插件版本号
+        pom.version = '1.0.0'
+    }
+}
