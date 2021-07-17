@@ -86,3 +86,4 @@ lint/tmp/
 
 repo/
 .idea/
+.idea/codeStyles/Project.xml
