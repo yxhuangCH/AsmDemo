@@ -25,7 +25,7 @@ android {
 
 // 与 AsmPlugin 中创建 project.extensions.create("analytics", AnalyticsExtension) 创建是要一致
 analytics {
-    disableAutoTrack = false
+    disableAutoTrack = true
 }
 
 dependencies {

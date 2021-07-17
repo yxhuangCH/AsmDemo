@@ -8,4 +8,5 @@ class AnalyticsExtension {
      */
     boolean disableAutoTrack = false
 
+    String print = "text print"
 }
